@@ -15,6 +15,10 @@
   apt: name={{ item }} update_cache=yes state=present
   loop: "{{ gitlab_dependencies }}"
 
+- name: Updating remote system
+  apt:
+    update_cache: yes
+
 - name: Install GitLab dependencies (Debian).
   apt:
     name: gnupg2

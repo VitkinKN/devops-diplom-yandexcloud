@@ -175,6 +175,7 @@ konstantin@konstantin-forever:~/DEVOPS_COURSE/DIPLOM/terraform/stage$ terraform 
 - *Убедимся, что теперь можно выполнить команды terraform destroy и terraform apply без дополнительных ручных действий.*
 
 - *Поднимаются 7 VM, все на основе образа ubuntu - имеет внешний статический IP адрес, арендованный у YandexCloud -51.250.6.241*
+- *Домен был делегирован под управление ns1.yandexcloud.net и ns2.yandexcloud.net*
 
 ![](https://github.com/VitkinKN/diplom-yandexcloud/blob/master/images/3.jpg )
 
@@ -334,6 +335,23 @@ ok: [runner.diplomvitkos.site]
 PLAY RECAP *********************************************************************
 runner.diplomvitkos.site   : ok=8    changed=3    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
 ```
+___
+
+### *Установка Prometheus, Alert Manager, Node Exporter и Grafana*
+- *Разработана Ansible роль для установки Prometheus, Alert Manager и Grafana.*
+- *Имя сервера monitoring.diplomvitkos.site*
+- *В домменной зоне настроены [А-записи](./terraform/dns.tf) на внешний адрес reverse proxy:*
+- *https://grafana.diplomvitkos.site (Grafana)*
+- *https://prometheus.diplomvitkos.site (Prometheus)*
+- *https://alertmanager.diplomvitkos.site (Alert Manager)*
+- *На всех серверах установлен [Node Exporter](./ansible/roles/nodeexporter) и его метрики доступны Prometheus.*
+![](https://github.com/VitkinKN/diplom-yandexcloud/blob/master/images/13(prometeus).jpg )
+- *У Alert Manager есть необходимый набор правил для создания алертов*
+![](https://github.com/VitkinKN/diplom-yandexcloud/blob/master/images/15(alertmen).jpg )
+- *В Grafana есть дашборд отображающий метрики из Node Exporter по всем серверам.*
+![](https://github.com/VitkinKN/diplom-yandexcloud/blob/master/images/14(grafana).jpg )
+___
+
 
 ___
 

@@ -49,9 +49,8 @@
      remote_user: konstantin
      roles:
        - walkinghosts
-  #     - ansible-role-gitlab
+       - ansible-role-gitlab
   #     - nodeexporter
-   #    - gitlab
      environment:
         http_proxy: http://diplomvitkos.site:8118
         https_proxy: http://diplomvitkos.site:8118
