@@ -1,0 +1,5 @@
+---
+reg_runner_token: "GR1348941rPPBuRsL5fz1jH2vxX82"
+gitlab_runner_script_url: "https://packages.gitlab.com/install/repositories/runner/gitlab-runner/script.deb.sh"
+gitlab_runner_url: "https://gitlab.com/"
+gitlab_runner_executor: shell
