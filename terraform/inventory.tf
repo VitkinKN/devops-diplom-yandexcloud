@@ -27,9 +27,9 @@ resource "local_file" "inventory" {
     ansible_ssh_common_args='-o ControlMaster=auto -o ControlPersist=10m -o ProxyCommand="ssh -W %h:%p -q konstantin@diplomvitkos.site"'
 
     [gitlab]
-    gitlab.diplomvitkos.site  gitlab_domain=diplomvitkos.site gitlab_external_url=http://gitlab.diplomvitkos.site/
+    gitlab.diplomvitkos.site
     [gitlab:vars]
-    ansible_host=${yandex_compute_instance.node05.network_interface.0.ip_address} gitlab_domain=diplomvitkos.site gitlab_external_url=http://gitlab.diplomvitkos.site/
+    ansible_host=${yandex_compute_instance.node05.network_interface.0.ip_address}
     ansible_ssh_common_args='-o ControlMaster=auto -o ControlPersist=10m -o ProxyCommand="ssh -W %h:%p -q konstantin@diplomvitkos.site"'
 
     [runner]
@@ -74,5 +74,7 @@ resource "local_file" "inventory" {
     yandex_compute_instance.node06,
     yandex_compute_instance.node07,
 
+konstantin
+rb/mtk/lCP3kJAgCaeSNqXMkV3oIkew9KXh5v5LFPT4=
   ]
 }

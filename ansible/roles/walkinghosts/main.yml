@@ -24,6 +24,11 @@
     path: /etc/hosts
     line: "192.168.110.15 gitlab gitlab.diplomvitkos.site"
 
+- name: "Guests for gitlab"
+  lineinfile:
+    path: /etc/hosts
+    line: "192.168.110.15 gitlab gitlab.diplomvitkos.site"
+
 - name: "Guests for runner"
   lineinfile:
     path: /etc/hosts
